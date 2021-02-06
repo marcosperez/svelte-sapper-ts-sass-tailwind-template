@@ -12,10 +12,9 @@
   "dependencies": {
     "compression": "^1.7.1",
     "node-sass": "^5.0.0",
-    "polka": "next",
+    "polka": "^1.0.0-next.11",
     "postcss": "^8.2.5",
-    "sirv": "^1.0.0",
-    "tailwindcss": "^2.0.2"
+    "sirv": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -35,7 +34,13 @@
     "@types/node": "^14.11.1",
     "@types/polka": "^0.5.1",
     "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
+    "cssnano": "^4.1.10",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1",
     "postcss-load-config": "^3.0.0",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.1.2",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
@@ -43,6 +48,7 @@
     "svelte": "^3.17.3",
     "svelte-check": "^1.0.46",
     "svelte-preprocess": "^4.6.6",
+    "tailwindcss": "^2.0.2",
     "tslib": "^2.0.1",
     "typescript": "^4.0.3"
   }

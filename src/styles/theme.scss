@@ -1,3 +1,52 @@
 // theme.scss
-$main-color: blue;
+// $main-color: blue;
 $site-width: 1200px;
+
+$theme-colors: (
+  "primary": (
+    "base": #384ea9,
+    "light": #e4efff,
+    "dark": #273677,
+  ),
+  "accent": (
+    "base": #f08110,
+    "light": #ff8100,
+    "dark": #e47f17,
+  ),
+  "foreground": (
+    "base": #393939,
+    "light": #6e6e6e,
+    "dark": #111,
+  ),
+  "background": (
+    "base": #f8f5f5,
+    "light": #fff,
+    "dark": #ddd,
+  ),
+);
+
+$contrast-colors: (
+  "dark": (
+    "primary": rgb(255, 255, 255),
+    "secondary": rgba(255, 255, 255, 0.7),
+    "disabled": rgba(255, 255, 255, 0.5),
+    "hint": rgba(255, 255, 255, 0.12),
+  ),
+  "light": (
+    "primary": rgba(0, 0, 0, 0.87),
+    "secondary": rgba(0, 0, 0, 0.54),
+    "disabled": rgba(0, 0, 0, 0.38),
+    "hint": rgba(0, 0, 0, 0.12),
+  ),
+);
+
+@function theme-color($key: "primary", $variant: "base") {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}
+
+@mixin contrast($background: "light", $type: "primary") {
+  color: contrast($background, $type);
+}
+
+// https://codeburst.io/a-successful-sass-theme-structure-ca9d1c477dc7

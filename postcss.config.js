@@ -9,5 +9,9 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
 const dev = process.env.ROLLUP_WATCH;
 
 module.exports = {
-  plugins: [require("tailwindcss"), ...(!dev ? [purgecss] : [])],
+  plugins: [
+    require("autoprefixer"),
+    require("tailwindcss"),
+    ...(!dev ? [purgecss] : []),
+  ],
 };
