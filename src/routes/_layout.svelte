@@ -4,7 +4,7 @@
 	export let segment: string;
 </script>
 
-<style>
+<style lang="scss" global>
 	main {
 		position: relative;
 		max-width: 56em;
