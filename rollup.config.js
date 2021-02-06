@@ -15,13 +15,17 @@ const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 const preprocess = sveltePreprocess({
+  postcss: true,
   scss: {
-    includePaths: ["src"],
+    includePaths: ["src", "node_modules"],
     prependData: "@import 'src/styles/global.scss';",
+    postcss: {
+      plugins: [require("autoprefixer")],
+    },
   },
-  postcss: {
-    plugins: [require("autoprefixer")],
-  },
+  // postcss: {
+  //   plugins: [require("autoprefixer")],
+  // },
 });
 
 const onwarn = (warning, onwarn) =>
